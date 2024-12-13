@@ -6,6 +6,9 @@ function khabarxpress_enqueue_scripts() {
     wp_enqueue_script('bootstrap-js', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js', array('jquery'), null, true);
     wp_enqueue_script('custom-js', get_template_directory_uri() . '/assets/js/custom.js', array('jquery'), null, true);
     wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+    // Enqueue Bootstrap Icons CSS
+    wp_enqueue_style( 'bootstrap-icons', 'https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css', array(), null );
+
 
 }
 add_action('wp_enqueue_scripts', 'khabarxpress_enqueue_scripts');
@@ -17,6 +20,7 @@ function khabarxpress_theme_setup() {
     add_theme_support('menus');
     register_nav_menu('primary', __('Primary Menu', 'khabarxpress'));
     register_nav_menu('social', __('Social Menu', 'khabarxpress'));
+    
 }
 add_action('after_setup_theme', 'khabarxpress_theme_setup');
 
